@@ -3,6 +3,7 @@ import { useAuth } from "../store/auth";
 import { useParams } from "react-router-dom";
 import {toast } from 'react-toastify';
 export const UpdateUser = () => {
+  const backendUrl = import.meta.env.VITE_BACKEND_URL;
   const [formData, setFormData] = useState({
     username: "",
     email: "",
@@ -25,7 +26,7 @@ const params=useParams();
 
   try {
     console.log("update user:", params.id);
-    const response = await fetch(`http://localhost:5000/api/user/update/${params.id}`, {
+    const response = await fetch(`${backendUrl}/api/user/update/${params.id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -46,7 +47,7 @@ const params=useParams();
 
  const getSingleUser = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/api/user/get/${params.id}`, {
+      const response = await fetch(`${backendUrl}/api/user/get/${params.id}`, {
         method: "GET",
         headers: {
           Authorization: authToken,

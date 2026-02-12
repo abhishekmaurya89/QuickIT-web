@@ -6,8 +6,9 @@ export const AdminContact = () => {
   const [contact, setContact] = useState([]);
 
   const getAllcontact = async () => {
+    const backendUrl = import.meta.env.VITE_BACKEND_URL;
     try {
-      const response = await fetch("http://localhost:5000/api/user/contact", {
+      const response = await fetch(`${backendUrl}/api/user/contact`, {
         method: "GET",
         headers: {
           Authorization: authToken,
@@ -28,7 +29,8 @@ export const AdminContact = () => {
   const handleDelete = async (id) => {
     try {
       console.log("Delete message:", id);
-      const response = await fetch(`http://localhost:5000/api/user/contact/${id}`, {
+      const response = await fetch(`${backendUrl}/api/user/contact/${id}`, {
+        
         method: "DELETE",
         headers: {
           Authorization: authToken,

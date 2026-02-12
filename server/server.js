@@ -11,8 +11,9 @@ const connectDb = require("./connect");
 const errorMiddleware = require("./middlewares/error-middleware");
 
 const app = express();
+
 const corsOptions = {
-  origin: "*", 
+  origin: "*",
   methods: "GET, POST, PUT, DELETE, PATCH, HEAD",
   credentials: true,
 };
@@ -28,6 +29,14 @@ app.use("/api/user", adminRoute);
 
 app.use(errorMiddleware);
 
-connectDb();
+// Define Port
+const PORT = process.env.PORT || 5000;
+
+// Connect DB and Start Server
+connectDb().then(() => {
+  app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+  });
+});
 
 module.exports = app;

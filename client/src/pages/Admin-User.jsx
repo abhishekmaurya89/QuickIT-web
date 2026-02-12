@@ -3,12 +3,13 @@ import { useAuth } from "../store/auth";
 import { Link } from "react-router-dom"; 
 
 export const AdminUsers = () => {
+  const backendUrl = import.meta.env.VITE_BACKEND_URL;
   const { authToken } = useAuth();
   const [users, setUsers] = useState([]);
 
   const getAllUser = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/user/admin", {
+      const response = await fetch(`${backendUrl}/api/user/admin`, {
         method: "GET",
         headers: {
           Authorization: authToken,
@@ -34,7 +35,7 @@ export const AdminUsers = () => {
   const handleDelete = async (id) => {
     try {
       console.log("Delete user:", id);
-      const response = await fetch(`http://localhost:5000/api/user/admin/delete/${id}`, {
+      const response = await fetch(`${backendUrl}/api/user/admin/delete/${id}`, {
         method: "DELETE",
         headers: {
           Authorization: authToken,

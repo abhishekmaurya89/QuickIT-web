@@ -23,7 +23,7 @@ export const AuthProvider = ({ children }) => {
 
   const userAuthentication = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/auth/user", {
+      const response = await fetch(`${backendUrl}/api/auth/user`, {
         method: "GET",
         headers: {
           Authorization: authToken,
@@ -45,8 +45,9 @@ export const AuthProvider = ({ children }) => {
   };
 
   const getServices = async () => {
+  const backendUrl = import.meta.env.VITE_BACKEND_URL;
     try {
-      const response = await fetch("http://localhost:5000/api/data/service", {
+      const response = await fetch(`${backendUrl}/api/data/service`, {
         method: "GET",
       });
 
