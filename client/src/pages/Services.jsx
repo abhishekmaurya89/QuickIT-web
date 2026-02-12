@@ -1,4 +1,5 @@
 import { useAuth } from "../store/auth";
+import designImage from "../assets/design.png";
 
 export const Services = () => {
   const { services } = useAuth();
@@ -13,7 +14,7 @@ console.log("Services Data:", services);
             return (
               <article className="card" key={ind}>
                 <div className="card-media">
-                  <img src="/src/assets/design.png" alt={service} />
+                  <img src={designImage} alt={service} />
                 </div>
 
                 <div className="card-body">

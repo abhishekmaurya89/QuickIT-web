@@ -1,4 +1,5 @@
 import { Analytics } from "../components/Analytics";
+import aboutImage from "../assets/about.png";
 
 export const About = () => {
   const features = [
@@ -56,7 +57,7 @@ export const About = () => {
 
             <div className="hero-image">
               <img
-                src="/src/assets/about.png"
+                src={aboutImage}
                 alt="Team working on code"
                 width="400"
                 height="500"

@@ -1,6 +1,8 @@
 import { Analytics } from "../components/Analytics";
 import React from "react";
 import { useAuth } from "../store/auth";
+import homeImage from "../assets/home.png";
+import designImage from "../assets/design.png";
 export const Home = () => {
 const { user } = useAuth();
   return (
@@ -30,7 +32,7 @@ const { user } = useAuth();
 
             <div className="hero-image">
               <img
-                src="/src/assets/home.png"
+                src={homeImage}
                 alt="Team working on code"
                 width="400"
                 height="500"
@@ -48,7 +50,7 @@ const { user } = useAuth();
         <div className="container grid grid-two-cols">
           <div className="hero-image">
             <img
-              src="/src/assets/design.png"
+              src={designImage}
               alt="Design collaboration"
               width="400"
               height="500"
