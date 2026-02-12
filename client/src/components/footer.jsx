@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="footer-section">
           <h4>About</h4>
           <p>
-            Your company description here.
+            QuickIT is your trusted IT partner, delivering smart, innovative, and secure digital solutions tailored to meet your unique business needs. We are committed to elevating your business with cutting-edge technology and exceptional service.
           </p>
         </div>
 
@@ -70,7 +70,7 @@ const Footer = () => {
 
       {/* Bottom Bar */}
       <div className="footer-bottom">
-        <p>&copy; 2024 Your Company. All rights reserved.</p>
+        <p>&copy; 2024 QuickIT. All rights reserved.</p>
       </div>
     </footer>
   );
