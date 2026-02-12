@@ -26,7 +26,9 @@ app.use("/api/auth", authroute);
 app.use("/api/form", contactRoute);
 app.use("/api/data", serviceRoute);
 app.use("/api/user", adminRoute);
-
+app.get('/health',(req,res)=>{
+  res.status(200).send('ok');
+});
 app.use(errorMiddleware);
 
 // Define Port
